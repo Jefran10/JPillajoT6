@@ -1,4 +1,6 @@
-﻿namespace JPillajoT6
+﻿using JPillajoT6.View;
+
+namespace JPillajoT6
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new vEstudiante();
         }
     }
 }

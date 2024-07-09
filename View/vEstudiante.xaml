@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JPillajoT6.View.vEstudiante"
+             Title="vEstudiante">
+    <VerticalStackLayout
+        Spacing="20"
+        Padding="20">
+        <Label 
+            Text="Semana 6: Consumo WS"
+            FontSize="20"
+            HorizontalTextAlignment="Center"
+            TextColor="DarkBlue" />
+
+        <StackLayout>
+            <Grid BackgroundColor="LightGray" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Código" Grid.Column="0" HorizontalOptions="Start" TextColor="Black" FontAttributes="Bold" />
+                <Label Text="Nombre" Grid.Column="1" HorizontalOptions="Start" TextColor="Black" FontAttributes="Bold" />
+                <Label Text="Apellido" Grid.Column="2" HorizontalOptions="Start" TextColor="Black" FontAttributes="Bold" />
+                <Label Text="Edad" Grid.Column="3" HorizontalOptions="Start" TextColor="Black" FontAttributes="Bold" />
+            </Grid>
+            <ListView x:Name="listaEstudiantes" SeparatorVisibility="None" BackgroundColor="White" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="WhiteSmoke" CornerRadius="10" Padding="5" Margin="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="lblCodigo" Text="{Binding codigo}" Grid.Column="0" HorizontalOptions="Start" TextColor="DarkBlue" />
+                                    <Label x:Name="lblNombre" Text="{Binding nombre}" Grid.Column="1" HorizontalOptions="Start" TextColor="DarkBlue" />
+                                    <Label x:Name="lblApellido" Text="{Binding apellido}" Grid.Column="2" HorizontalOptions="Start" TextColor="DarkBlue" />
+                                    <Label x:Name="lblEdad" Text="{Binding edad}" Grid.Column="3" HorizontalOptions="Start" TextColor="DarkBlue" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
